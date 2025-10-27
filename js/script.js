@@ -18,6 +18,33 @@ document.addEventListener('DOMContentLoaded', function() {
     return `${year}-${month}-${day}`;
   }
 
+    // Array of 'Did You Know?' facts
+    const didYouKnowFacts = [
+      'Did you know? The largest volcano in the solar system is Olympus Mons on Mars.',
+      'Did you know? A day on Venus is longer than its year.',
+      'Did you know? Neutron stars can spin at a rate of 600 times per second.',
+      'Did you know? The footprints on the Moon will remain for millions of years.',
+      'Did you know? Jupiter has at least 79 moons!',
+      'Did you know? The Sun makes up 99.86% of the mass in our solar system.',
+      'Did you know? Space is completely silent.',
+      'Did you know? One million Earths could fit inside the Sun.',
+      'Did you know? Saturn’s rings are made of ice and rock.',
+      'Did you know? The Milky Way galaxy will collide with Andromeda in about 4.5 billion years.'
+    ];
+
+    // Function to show loading screen with a random fact
+    function showLoadingFact() {
+      // Pick a random fact
+      const fact = didYouKnowFacts[Math.floor(Math.random() * didYouKnowFacts.length)];
+      // Show loading message with fact, centered vertically and horizontally
+      gallery.innerHTML = `
+        <div class="loading-screen" style="display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:70vh;max-width:100%;text-align:center;margin:auto;">
+          <div style="font-size:2.5rem;margin-bottom:18px;">🚀</div>
+          <div style="font-size:1.3rem;color:#e62c2e;font-weight:bold;margin-bottom:18px;max-width:500px;">${fact}</div>
+          <div id="loadingMsg" style="font-size:1.1rem;color:#13294b;">Loading images...</div>
+        </div>
+      `;
+    }
   // Set default date range to past 7 days
   function setDefaultDates() {
   // For debugging, set start date to June 30, 2024 and end date to July 8, 2024
@@ -108,8 +135,12 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-  // Show loading message
-  gallery.innerHTML = '<p id="loadingMsg">Loading images...</p>';
+
+      // Show loading screen with random fact
+      showLoadingFact();
+
+      // Wait for 2.5 seconds before fetching images
+      await new Promise(resolve => setTimeout(resolve, 2500));
 
     try {
       // Build API URL with parameters
