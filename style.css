@@ -1,3 +1,12 @@
+/* Header background with large NASA logo */
+
+.header-side-logo {
+  height: 56px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(11,26,47,0.18);
+  background: #fff;
+  object-fit: contain;
+}
 /* Global reset & box sizing */
 * {
   box-sizing: border-box;

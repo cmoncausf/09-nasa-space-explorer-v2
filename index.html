@@ -9,9 +9,10 @@
 <body>
   <div class="container">
     <header class="site-header">
-      <div class="logo-title">
-        <img src="img/nasa-worm-logo.png" alt="NASA Logo" class="logo" />
-        <h1>NASA Space Explorer</h1>
+      <div class="logo-title" style="display:flex;align-items:center;justify-content:center;gap:18px;">
+        <img src="img/nasa-worm-logo.png" alt="NASA Worm Logo" class="logo" style="height:56px;" />
+        <h1 style="font-size:2.2rem;font-weight:900;color:#e62c2e;letter-spacing:2px;text-shadow:0 2px 8px #0b1a2f;">Space Explorer</h1>
+        <img src="img/NASA-Logo-Large.jpg" alt="NASA Large Logo" class="header-side-logo" style="height:56px;border-radius:8px;box-shadow:0 2px 12px rgba(11,26,47,0.18);margin-left:8px;" />
       </div>
       <div class="controls">
         <label>
@@ -25,6 +26,12 @@
         <button id="getImageBtn">Get Space Images</button>
       </div>
     </header>
+    <!-- Fun Fact Section -->
+    <section id="funFactSection" style="margin: 24px 0; text-align: center;">
+      <div id="funFactBox" style="background: #fff; color: #e62c2e; font-weight: bold; font-size: 1.1rem; border-radius: 8px; box-shadow: 0 2px 12px rgba(11,26,47,0.10); padding: 18px 12px; max-width: 700px; margin: 0 auto;">
+        <!-- Fact will be inserted here by JS -->
+      </div>
+    </section>
     <main>
       <div id="gallery" class="gallery">
         <div class="placeholder">

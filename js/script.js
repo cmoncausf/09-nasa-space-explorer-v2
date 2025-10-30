@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const startDateInput = document.getElementById('startDate');
   const endDateInput = document.getElementById('endDate');
 
+  // Fun Fact DOM element
+  const funFactBox = document.getElementById('funFactBox');
+
   // Helper function to format date as YYYY-MM-DD
   function formatDate(date) {
     const year = date.getFullYear();
@@ -31,6 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
       'Did you know? Saturn’s rings are made of ice and rock.',
       'Did you know? The Milky Way galaxy will collide with Andromeda in about 4.5 billion years.'
     ];
+
+  // Show a random fun fact above the gallery on page load
+  function showFunFact() {
+    const fact = didYouKnowFacts[Math.floor(Math.random() * didYouKnowFacts.length)];
+    if (funFactBox) {
+      funFactBox.textContent = fact;
+    }
+  }
 
     // Function to show loading screen with a random fact
     function showLoadingFact() {
@@ -213,6 +224,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Set default dates on page load
   setDefaultDates();
+
+  // Show fun fact on page load
+  showFunFact();
 
   // Add event listener to the button
   getImageBtn.addEventListener('click', fetchApodImages);
